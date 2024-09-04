@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESTAURANTE</title>
+</head>
+<body style=" background-size: cover; color: white;" data-bs-theme="dark">
+    <nav class="navbar" style=" background: linear-gradient(90deg,darkolivegreen , white, darkred);">
+        <div class="container-fluid">
+<h1 class="m-auto text-dark"><b>RESTAURANTE MEXICANO SUMETTIKUL</b></h1>
+        </div>
+      </nav>
+      <br>
+      <div class="container-fluid w-75" >
+        <div class="row w-25 shadow p-2" style="position: absolute; left: 300px; ">
+            <h1 class="text-dark text-center" style=" background: linear-gradient(90deg,darkolivegreen , white, darkred);"><b>MENU</b></h1>
+            <button class="btn m-auto w-25" style="background-color: darkseagreen; color: black;" data-bs-toggle="modal" data-bs-target="#addMenu"><b>+</b></button>
+            <div class="list-group mt-3" id="listaMenu">
+
+            </div>
+        </div>
+      </div>
+      
+      <div class="container-fluid w-75" >
+        <div class="row w-25 shadow p-2" style="position: absolute; left: 900px;">
+            <h1 class="text-dark text-center" style=" background: linear-gradient(90deg,darkolivegreen , white, darkred);"><b>ORDEN</b></h1>
+                <div>
+                    <div class="list-group" id="orden"></div>
+                    <div class="border my-2 p-2">
+                        <b>                    <h3>PROPINA</h3>                        </b>
+                        <div class="input-group">
+                            <div class="input-group-text" style="background-color: darkred;">
+                                <input type="radio" class="form-check-input mt-0 mx-3"  onclick="calcularPropina()" value="10" name="propina">10%
+                            </div>
+                            <div class="input-group-text" style="background: darkred;">
+                                <input type="radio" class="form-check-input mt-0 mx-3"  onclick="calcularPropina()" value="20" name="propina">20%
+                            </div>
+                            <div class="input-group-text" style="background: darkred;">
+                                <input type="radio" class="form-check-input mt-0 mx-3"  onclick="calcularPropina()" value="30" name="propina">30%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border my-2 p-2">
+                        <h3><b>TOTAL A PAGAR</b></h3>
+                        <h5>Subtotal <b id="subtotal">$0.00</b></h5>    
+                        <h5>Propina <b id="propina">$0.00</b></h5>    
+                        <h2>Total <b id="total">$0.00</b></h2> 
+                    </div>
+                    <div class="row">
+                        <div class="col"><button class="d-block btn w-100 btn-lg" style="background-color: darkred;">CANCELAR</button></div>
+                        <div class="col"><button class="btn w-100 btn-lg" style="background-color: white; color: black;" onclick="terminar()">GUARDAR</button></div>
+
+                    </div>
+                </div>
+            </div>  
+        </div>
+        
+
+
+
+      <div class="modal fade" id="addMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="border-color: cadetblue;">
+        <div class="modal-dialog modal-dialog-centered" style="border-color: cadetblue;">
+            <div class="modal-content" style="border-color: cadetblue;">
+                <div class="modal-header" style="border-color: cadetblue;">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">AGREGAR MENU</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="border-color: cadetblue;">
+                    <p><label for="">Platillo:</label></p>
+                    <input type="text" class="form-control" id="des" style="border-color: cadetblue;">
+                    <p><label for="">Costo:</label></p>
+                    <input type="number" class="form-control" id="cos" style="border-color: cadetblue;">
+                </div>
+                <div class="modal-footer" style="border-color: cadetblue;">
+                    <button type="button" class="btn" style="background-color: darkred; color: white; border-color: cadetblue;" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn" style="background-color: darkolivegreen; color: white; border-color: cadetblue;" onclick="guardarMenu()" >Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>    
+      
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Asegúrate de incluir jQuery -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-circle-progress@1.2.2/dist/circle-progress.min.js"></script> <!-- Luego carga circle-progress -->
+  <script src="js/app.js"></script> <!-- Finalmente, carga tu archivo JavaScript -->
+</body>
+</html>
